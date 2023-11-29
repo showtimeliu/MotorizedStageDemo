@@ -17,10 +17,41 @@ namespace KDC101Console
         {
             // Uncomment this line (and SimulationManager.Instance.UninitializeSimulations() at the end on Main)
             // If you are using a simulated device
-            // SimulationManager.Instance.InitializeSimulations();
+            SimulationManager.Instance.InitializeSimulations();
 
             // Enter the serial number for your device
-            string serialNo = "27267208";
+            string serialNo = "27000001";   // Z; 
+
+            //Console.WriteLine("Enter the axis of moving direction (X/Y/Z): ");
+            //string strAxis = Console.ReadLine(); 
+
+            //// check if the input is valid 
+            //if (!string.IsNullOrEmpty(strAxis) && strAxis.Length == 1)
+            //{
+            //    char charAxis = strAxis[0]; 
+            //    switch (charAxis)
+            //    {
+            //        case 'X':
+            //        case 'x':
+            //            serialNo = "27265933";
+            //            break;
+            //        case 'Y':
+            //        case 'y':
+            //            serialNo = "27267203";
+            //            break;
+            //        case 'Z':
+            //        case 'z':
+            //            serialNo = "27267208";
+            //            break;
+            //    }
+            //}
+            //else
+            //{                
+            //    Console.WriteLine("Invalid input! Will use the default device (Z axis, 27267208)");
+            //}
+            // string serialNo = "27265933";   // X
+            // string serialNo = "27267203";   // Y
+            // string serialNo = "27267208";   // Z
 
             DeviceManagerCLI.BuildDeviceList();
 
@@ -64,19 +95,18 @@ namespace KDC101Console
 
             // Move the stage/actuator to 5mm (or degrees depending on the device 
             // connected).
-            device.SetRotationModes(RotationSettings.RotationModes.RotationalRange, RotationSettings.RotationDirections.Reverse);
+            // device.SetRotationModes(RotationSettings.RotationModes.RotationalRange, RotationSettings.RotationDirections.Reverse);
 
-            decimal[] positions = { 350, 355, 10 };
+            decimal[] positions = { 3.0m, 1.5m, 1.0m
+            };
             Console.WriteLine("Actuator is Moving");
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 2; i++)
             {
                 foreach (decimal pos in positions)
                 {
                     device.MoveTo(pos, 10000);
                     Thread.Sleep(1000);
-                    Console.WriteLine("Current position: %f", device.Position);
-
-                    device.MoveJog
+                    Console.WriteLine("Current position: " + device.Position);
                 }
             }
 
@@ -86,11 +116,12 @@ namespace KDC101Console
             // Shut down controller using Disconnect() to close comms
             // Then the used library
             device.ShutDown();
-            Console.WriteLine("Complete. Press any key to exit");
+            
 
             // Uncomment this line if you are using Simulations
-            //SimulationManager.Instance.UninitializeSimulations();
+            SimulationManager.Instance.UninitializeSimulations();
 
+            Console.WriteLine("Complete. Press any key to exit");
             Console.ReadKey();
 
         }
