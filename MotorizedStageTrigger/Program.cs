@@ -17,10 +17,10 @@ namespace KDC101Console
         {
             // Uncomment this line (and SimulationManager.Instance.UninitializeSimulations() at the end on Main)
             // If you are using a simulated device
-            SimulationManager.Instance.InitializeSimulations();
+            // SimulationManager.Instance.InitializeSimulations();
 
             // Enter the serial number for your device
-            string serialNo = "27000001";   // Z; 
+            string serialNo = "27267203";   // Z; 
 
             //Console.WriteLine("Enter the axis of moving direction (X/Y/Z): ");
             //string strAxis = Console.ReadLine(); 
@@ -116,10 +116,10 @@ namespace KDC101Console
             // Shut down controller using Disconnect() to close comms
             // Then the used library
             device.ShutDown();
-            
+
 
             // Uncomment this line if you are using Simulations
-            SimulationManager.Instance.UninitializeSimulations();
+            // SimulationManager.Instance.UninitializeSimulations();
 
             Console.WriteLine("Complete. Press any key to exit");
             Console.ReadKey();
