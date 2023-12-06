@@ -53,6 +53,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Thorlabs.MotionControl.KCube.DCServoCLI.dll</HintPath>
     </Reference>
+    <Reference Include="Thorlabs.MotionControl.PrivateInternal, Version=1.14.44.22134, Culture=neutral, PublicKeyToken=c7ec6d6d6e2435e7, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Thorlabs.MotionControl.PrivateInternal.dll</HintPath>
+    </Reference>
     <Reference Include="Thorlabs.MotionControl.Tools.Common, Version=1.0.0.22134, Culture=neutral, PublicKeyToken=c7ec6d6d6e2435e7, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Thorlabs.MotionControl.Tools.Common.dll</HintPath>
@@ -63,7 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="ExternalTriggerDemo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
