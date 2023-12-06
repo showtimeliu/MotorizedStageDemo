@@ -11,13 +11,15 @@ using Thorlabs.MotionControl.KCube.DCServoCLI;
 
 namespace KDC101Console
 {
-    class Program
+    class ExternalTriggerDemo
     {
         static void Main(string[] args)
         {
             // Uncomment this line (and SimulationManager.Instance.UninitializeSimulations() at the end on Main)
             // If you are using a simulated device
             // SimulationManager.Instance.InitializeSimulations();
+
+            Console.WriteLine("External trigger demo");
 
             // Enter the serial number for your device
             string serialNo = "27267203";   // Z; 
@@ -116,7 +118,7 @@ namespace KDC101Console
             // Shut down controller using Disconnect() to close comms
             // Then the used library
             device.ShutDown();
-            
+
 
             // Uncomment this line if you are using Simulations
             // SimulationManager.Instance.UninitializeSimulations();
